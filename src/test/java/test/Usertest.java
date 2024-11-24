@@ -30,7 +30,7 @@ public class Usertest {
         }
     }
 @Test
-    public void findUserByUsernameAndPassword() {
+    public void getUser() {
         InputStream is = null;
         try {
             // 读取 MyBatis 配置文件
@@ -46,7 +46,7 @@ public class Usertest {
             params.put("password", "password123"); // 替换为实际密码
 
             // 执行查询
-            User user = session.selectOne("mapper.User.findUserByUsernameAndPassword", params);
+            User user = session.selectOne("mapper.User.getUser", params);
 
             // 判断查询结果
             if (user != null) {

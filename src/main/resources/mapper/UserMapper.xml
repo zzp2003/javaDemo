@@ -13,7 +13,7 @@
     </select>
 
     <!-- 根据 username 和 password 查询 User -->
-    <select id="findUserByUsernameAndPassword" parameterType="map" resultType="pojo.User">
+    <select id="getUser" parameterType="map" resultType="pojo.User">
         SELECT *
         FROM user
         WHERE username = #{username} AND password = #{password};
