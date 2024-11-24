@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper为映射的根节点-->
+<mapper namespace="mapper.Stu">
+    <!--id ="接口中的方法名  在本文件中唯一"
+　　parameterType="传入的参数类型"
+　　resultType = "返回实体类对象，使用包.类名"-->
+    <!--   查询操作-->
+    <select id="findStuById" parameterType="int" resultType="pojo.Stu">
+        SELECT * from stu where id=#{id}
+    </select>
+    <select id="addStu" parameterType="pojo.Stu">
+        insert into stu(id,name,grade) value (#{id},#{name},#{grade})
+    </select>
+</mapper>

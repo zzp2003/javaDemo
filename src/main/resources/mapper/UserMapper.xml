@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper为映射的根节点-->
+<mapper namespace="mapper.User">
+    <!--id ="接口中的方法名  在本文件中唯一"
+　　parameterType="传入的参数类型"
+　　resultType = "返回实体类对象，使用包.类名"-->
+    <!--   查询操作-->
+    <select id="findUser" parameterType="int" resultType="pojo.User">
+        SELECT * from user where id=#{id};
+    </select>
+
+    <!-- 根据 username 和 password 查询 User -->
+    <select id="findUserByUsernameAndPassword" parameterType="map" resultType="pojo.User">
+        SELECT *
+        FROM user
+        WHERE username = #{username} AND password = #{password};
+    </select>
+
+    <!-- 插入新的 User 记录 -->
+    <insert id="addUser" parameterType="pojo.User">
+        INSERT INTO user (id,username, password, email, phone)
+        VALUES (#{id},#{username}, #{password}, #{email}, #{phone});
+    </insert>
+</mapper>
