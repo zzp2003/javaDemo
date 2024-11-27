@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- mapper为映射的根节点-->
-<mapper namespace="mapper.Stu">
+<mapper namespace="mapper.StuMapper">
     <!--id ="接口中的方法名  在本文件中唯一"
 　　parameterType="传入的参数类型"
 　　resultType = "返回实体类对象，使用包.类名"-->
@@ -14,4 +14,10 @@
     <select id="addStu" parameterType="pojo.Stu">
         insert into stu(id,name,grade) value (#{id},#{name},#{grade})
     </select>
+    <update id="updateStu" parameterType="pojo.Stu">
+        update stu set name=#{name},grade=#{grade} where id=#{id}
+    </update>
+    <delete id="deleteStu" parameterType="int">
+        delete from stu where id=#{id}
+    </delete>
 </mapper>

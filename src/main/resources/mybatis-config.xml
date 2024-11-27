@@ -19,7 +19,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="mapper/StuMapper.xml"></mapper>
+        <mapper class="mapper.StuMapper"></mapper>
+
         <mapper resource="mapper/UserMapper.xml" />
     </mappers>
 </configuration>
