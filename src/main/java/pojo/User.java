@@ -7,6 +7,9 @@ public class User {
     private String email;
     private String phone;
 
+    public String getString() {
+        return "id:" + id +"\n"+ "username:" + username +"\n"+ "password:" + password +"\n"+ "email:" + email +"\n"+ "phone:" + phone;
+    }
     public int getId() {
         return id;
     }

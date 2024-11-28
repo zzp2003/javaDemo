@@ -20,7 +20,7 @@
 
     <mappers>
         <mapper class="mapper.StuMapper"></mapper>
+        <mapper class="mapper.UserMapper"></mapper>
 
-        <mapper resource="mapper/UserMapper.xml" />
     </mappers>
 </configuration>

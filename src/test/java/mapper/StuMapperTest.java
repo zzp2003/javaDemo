@@ -28,6 +28,7 @@ public class StuMapperTest {
         System.out.println(stu.getString());
         session.close();
     }
+    public void addStu() {}
     @Test
     public void updateStu() {
         Stu stu = new Stu();

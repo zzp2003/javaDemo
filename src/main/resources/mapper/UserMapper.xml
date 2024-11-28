@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- mapper为映射的根节点-->
-<mapper namespace="mapper.User">
+<mapper namespace="mapper.UserMapper">
     <!--id ="接口中的方法名  在本文件中唯一"
 　　parameterType="传入的参数类型"
 　　resultType = "返回实体类对象，使用包.类名"-->
@@ -12,16 +12,16 @@
         SELECT * from user where id=#{id};
     </select>
 
-    <!-- 根据 username 和 password 查询 User -->
-    <select id="getUser" parameterType="map" resultType="pojo.User">
-        SELECT *
-        FROM user
-        WHERE username = #{username} AND password = #{password};
-    </select>
-
-    <!-- 插入新的 User 记录 -->
     <insert id="addUser" parameterType="pojo.User">
-        INSERT INTO user (id,username, password, email, phone)
-        VALUES (#{id},#{username}, #{password}, #{email}, #{phone});
+        insert into user(id,username,password,email,phone) value (#{id},#{username},#{password},#{email},#{phone})
     </insert>
+
+    <!-- 更新的 User 记录 -->
+    <update id="updateUser" parameterType="pojo.User">
+        update user set username=#{username},password=#{password},email=#{email},phone=#{phone} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
 </mapper>
